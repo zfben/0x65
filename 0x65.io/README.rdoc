@@ -1,4 +1,5 @@
 = 0x65.io官网源代码
+官网预览[http://benz303.github.com/0x65/]
 
 == 不会Ruby？
 请直接进入static获取HTML和CSS文件。
