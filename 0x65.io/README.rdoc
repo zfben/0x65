@@ -1,5 +1,4 @@
 = 0x65.io官网源代码
-预览： []
 
 == 不会Ruby？
 请直接进入static获取HTML和CSS文件。
@@ -14,8 +13,11 @@
 
 === 修改代码
 HTML源文件为 *views/pages/index.haml*（文件为 HAML格式[http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html]）
+
 CSS源文件为 *views/sass/0x65.sass*（文件为 SASS格式[http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html]）
+
 虽然使用了非主流的文件格式，不过相信大家都可以大致看懂。
+
 修改时无需重启服务器，可以边改边看效果。
 
 === 生成静态文件
