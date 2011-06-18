@@ -75,15 +75,16 @@ body {
   font-family: font, Arial, Helvetica, sans-serif;
   line-height: 180%;
   color: #444444;
+  font-size: 16px;
 }
 
-/* line 12, views/sass/0x65.sass */
+/* line 13, views/sass/0x65.sass */
 .center {
   margin: 0 auto;
   width: 800px;
 }
 
-/* line 16, views/sass/0x65.sass */
+/* line 17, views/sass/0x65.sass */
 h3 {
   display: block;
   font-weight: bold;
@@ -92,7 +93,7 @@ h3 {
   margin-bottom: 10px;
 }
 
-/* line 23, views/sass/0x65.sass */
+/* line 24, views/sass/0x65.sass */
 a {
   color: #8c2c0c;
   text-decoration: none;
@@ -102,7 +103,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* line 27, views/sass/0x65.sass */
+/* line 28, views/sass/0x65.sass */
 #nav {
   position: fixed;
   display: block;
@@ -113,7 +114,7 @@ a:hover {
   text-align: center;
   z-index: 10;
 }
-/* line 36, views/sass/0x65.sass */
+/* line 37, views/sass/0x65.sass */
 #nav a {
   display: inline-block;
   padding: 10px 20px;
@@ -123,11 +124,11 @@ a:hover {
   line-height: 30px;
 }
 
-/* line 44, views/sass/0x65.sass */
+/* line 45, views/sass/0x65.sass */
 #about {
   padding: 180px 0;
 }
-/* line 46, views/sass/0x65.sass */
+/* line 47, views/sass/0x65.sass */
 #about h1 {
   display: block;
   font-size: 90px;
@@ -137,12 +138,12 @@ a:hover {
   height: 90px;
   line-height: 90px;
 }
-/* line 54, views/sass/0x65.sass */
+/* line 55, views/sass/0x65.sass */
 #about h2 {
   font-size: 22px;
   text-align: center;
 }
-/* line 57, views/sass/0x65.sass */
+/* line 58, views/sass/0x65.sass */
 #about .desc {
   border-top: 1px solid #8c2c0c;
   margin-top: 20px;
@@ -150,38 +151,38 @@ a:hover {
   text-align: center;
 }
 
-/* line 63, views/sass/0x65.sass */
+/* line 64, views/sass/0x65.sass */
 #about_goal, #about_idea {
   background: #d3ccbd;
   padding: 60px 0;
 }
 
-/* line 67, views/sass/0x65.sass */
+/* line 68, views/sass/0x65.sass */
 #about_idea {
   padding-top: 0;
 }
 
-/* line 70, views/sass/0x65.sass */
+/* line 71, views/sass/0x65.sass */
 #member {
   padding: 10px 0 20px;
 }
-/* line 72, views/sass/0x65.sass */
+/* line 73, views/sass/0x65.sass */
 #member h3 {
   margin-top: 40px;
 }
-/* line 74, views/sass/0x65.sass */
+/* line 75, views/sass/0x65.sass */
 #member h4 {
   display: block;
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* line 79, views/sass/0x65.sass */
+/* line 80, views/sass/0x65.sass */
 #memberbox {
   overflow: hidden;
   text-align: center;
 }
-/* line 82, views/sass/0x65.sass */
+/* line 83, views/sass/0x65.sass */
 #memberbox a {
   display: block;
   position: relative;
@@ -193,22 +194,22 @@ a:hover {
   float: left;
   z-index: 1;
 }
-/* line 92, views/sass/0x65.sass */
+/* line 93, views/sass/0x65.sass */
 #memberbox a:hover {
   background: #8c2c0c;
   color: #d3ccbd;
   text-decoration: none;
 }
-/* line 97, views/sass/0x65.sass */
+/* line 98, views/sass/0x65.sass */
 #memberbox #m36, #memberbox #m44, #memberbox #m52 {
   margin-left: 400px;
 }
-/* line 99, views/sass/0x65.sass */
+/* line 100, views/sass/0x65.sass */
 #memberbox #m65 {
   margin-left: 150px;
 }
 
-/* line 102, views/sass/0x65.sass */
+/* line 103, views/sass/0x65.sass */
 #membershow {
   position: absolute;
   width: 360px;
@@ -217,11 +218,11 @@ a:hover {
   margin: 120px 0 0 200px;
   z-index: 0;
 }
-/* line 109, views/sass/0x65.sass */
+/* line 110, views/sass/0x65.sass */
 #membershow p {
   text-align: left;
 }
-/* line 111, views/sass/0x65.sass */
+/* line 112, views/sass/0x65.sass */
 #membershow .contact {
   position: absolute;
   width: 110px;
@@ -229,26 +230,26 @@ a:hover {
   top: 180px;
 }
 
-/* line 117, views/sass/0x65.sass */
+/* line 118, views/sass/0x65.sass */
 #plan {
   clear: both;
   background: #d3ccbd;
   padding: 20px 0 50px;
   margin-top: 30px;
 }
-/* line 122, views/sass/0x65.sass */
+/* line 123, views/sass/0x65.sass */
 #plan h3 {
   margin-top: 30px;
 }
 
-/* line 125, views/sass/0x65.sass */
+/* line 126, views/sass/0x65.sass */
 #contact {
   padding: 270px 0;
   font-size: 20px;
   text-align: center;
 }
 
-/* line 130, views/sass/0x65.sass */
+/* line 131, views/sass/0x65.sass */
 #footer {
   background: #d3ccbd;
   padding: 10px 0 60px;
