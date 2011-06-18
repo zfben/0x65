@@ -111,8 +111,9 @@ a:hover {
   width: 100%;
   bottom: 0;
   text-align: center;
+  z-index: 10;
 }
-/* line 35, views/sass/0x65.sass */
+/* line 36, views/sass/0x65.sass */
 #nav a {
   display: inline-block;
   padding: 10px 20px;
@@ -122,16 +123,15 @@ a:hover {
   line-height: 30px;
 }
 
-/* line 43, views/sass/0x65.sass */
+/* line 44, views/sass/0x65.sass */
 #about {
-  margin-bottom: 300px;
+  padding: 180px 0;
 }
-/* line 45, views/sass/0x65.sass */
+/* line 46, views/sass/0x65.sass */
 #about h1 {
   display: block;
   font-size: 90px;
   font-weight: bold;
-  padding-top: 150px;
   text-align: center;
   color: #8c2c0c;
   height: 90px;
@@ -176,21 +176,81 @@ a:hover {
   margin-top: 10px;
 }
 
-/* line 78, views/sass/0x65.sass */
+/* line 79, views/sass/0x65.sass */
+#memberbox {
+  overflow: hidden;
+  text-align: center;
+}
+/* line 82, views/sass/0x65.sass */
+#memberbox a {
+  display: block;
+  position: relative;
+  width: 48px;
+  height: 28px;
+  padding-top: 30px;
+  background: #d3ccbd;
+  margin: 1px;
+  float: left;
+  z-index: 1;
+}
+/* line 92, views/sass/0x65.sass */
+#memberbox a:hover {
+  background: #8c2c0c;
+  color: #d3ccbd;
+  text-decoration: none;
+}
+/* line 97, views/sass/0x65.sass */
+#memberbox #m36, #memberbox #m44, #memberbox #m52 {
+  margin-left: 400px;
+}
+/* line 99, views/sass/0x65.sass */
+#memberbox #m65 {
+  margin-left: 150px;
+}
+
+/* line 102, views/sass/0x65.sass */
+#membershow {
+  position: absolute;
+  width: 360px;
+  height: 200px;
+  padding: 20px;
+  margin: 120px 0 0 200px;
+  z-index: 0;
+}
+/* line 109, views/sass/0x65.sass */
+#membershow p {
+  text-align: left;
+}
+/* line 111, views/sass/0x65.sass */
+#membershow .contact {
+  position: absolute;
+  width: 110px;
+  margin-left: 250px;
+  top: 180px;
+}
+
+/* line 117, views/sass/0x65.sass */
 #plan {
+  clear: both;
   background: #d3ccbd;
   padding: 20px 0 50px;
   margin-top: 30px;
 }
-/* line 82, views/sass/0x65.sass */
+/* line 122, views/sass/0x65.sass */
 #plan h3 {
   margin-top: 30px;
 }
 
-/* line 85, views/sass/0x65.sass */
+/* line 125, views/sass/0x65.sass */
 #contact {
-  padding: 250px 0;
-  margin-bottom: 200px;
+  padding: 270px 0;
   font-size: 20px;
+  text-align: center;
+}
+
+/* line 130, views/sass/0x65.sass */
+#footer {
+  background: #d3ccbd;
+  padding: 10px 0 60px;
   text-align: center;
 }

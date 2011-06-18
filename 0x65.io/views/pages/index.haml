@@ -66,6 +66,25 @@
       %p 如果最后0x65 这个项目很遗憾的失败了， 我会把财务报表里面余下的钱按比例退还给大家。
       %h4 6. Mike 个人承诺
       %p 如果0x65 开出来，所有创始会员，这辈子过来都免费。
+    #memberbox.center
+      - 101.times do |i|
+        - s = (i+1).to_s(16)
+        - s = '0' << s if s.length == 1
+        - s = '0x' << s
+        %a(id="m#{i}" href="#member_#{i}" data-scroll="false")= s
+        - if i == 35
+          #membershow
+            - 101.times do |ii|
+              - ss = (ii+1).to_s(16)
+              - ss = '0' << ss if ss.length == 1
+              - ss = '0x' << ss
+              %div(id="member_#{ii}" style="#{ii == 0 ? '' : 'display:none'}")
+                %h3
+                  = ss
+                  会员名字
+                %p 寄语balalalalalalalalalalalalalalalalalalalalala......., 换行继续balalalalalalalalalalalalalalalalalala.......,最后一行balalalalalalalalalalalalalalala.......
+                %p.contact
+                  联系方式
 
     #plan
       .center
@@ -96,3 +115,55 @@
       %p
         我们现在还在召集101名Geek，如果你有兴趣，请联系
         %a(href="mailto:mike@gurudigger.com") mike@gurudigger.com
+    #footer
+      .center
+        %p &copy; 2011 0x65.io
+    %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
+    %script
+      :plain
+        $(window).resize(function(){
+          var h = window.innerHeight, list = ['about', 'contact'];
+          $.each(list, function(i, id){
+            var self = $('#'+id), padding = (h - self.height())/2 - 20;
+            self.css({
+              'padding-top': padding,
+              'padding-bottom': padding
+            });
+          });
+        }).trigger('resize');
+        $('body').delegate('a', 'click', function(){
+          var hash = this.hash;
+          if(this.host === window.location.host && hash.indexOf('#') === 0 && hash.length > 1){
+            var target = $(hash);
+            if(target.length > 0 && $(this).data('scroll') !== false){
+              $('html, body').stop().clearQueue().animate({scrollTop: $(hash).offset().top}, 600, function(){
+                window.location.hash = hash;
+              });
+              return false;
+            }
+          }
+        });
+        function showcard_start(){
+          return setInterval(function(){
+            $('#memberbox').trigger('showcard');
+          }, 5000);
+        }
+        $('#memberbox').bind('showcard', function(e, hash){
+          var target = $(hash), shown = $('#membershow div:visible');
+          if(typeof hash === 'undefined'){
+            target = shown.next().length > 0 ? shown.next() : $('#membershow div:first');
+          }
+          if(target.length > 0){
+            if(shown.length > 0){
+              shown.css('display', 'none');
+            }
+            target.fadeIn('slow');
+            return false;
+          }
+        }).delegate('a', 'click', function(){
+          $(this).trigger('showcard', this.hash);
+        }).data('timer', showcard_start()).mouseenter(function(){
+          clearInterval($(this).data('timer'));
+        }).mouseleave(function(){
+          $(this).data('timer', showcard_start());
+        });
