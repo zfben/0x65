@@ -158,10 +158,11 @@
               shown.css('display', 'none');
             }
             target.fadeIn('slow');
-            return false;
+            return true;
           }
+          return false;
         }).delegate('a', 'click', function(){
-          $(this).trigger('showcard', this.hash);
+          return !$(this).trigger('showcard', this.hash);
         }).data('timer', showcard_start()).mouseenter(function(){
           clearInterval($(this).data('timer'));
         }).mouseleave(function(){
