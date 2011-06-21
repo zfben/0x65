@@ -179,77 +179,61 @@ a:hover {
 
 /* line 80, views/sass/0x65.sass */
 #memberbox {
-  overflow: hidden;
+  width: 400px;
   text-align: center;
 }
+
 /* line 83, views/sass/0x65.sass */
-#memberbox a {
-  display: block;
-  position: relative;
-  width: 48px;
-  height: 28px;
-  padding-top: 30px;
-  background: #d3ccbd;
-  margin: 1px;
-  float: left;
-  z-index: 1;
+#member_number {
+  word-spacing: 8px;
 }
-/* line 93, views/sass/0x65.sass */
-#memberbox a:hover {
-  background: #8c2c0c;
-  color: #d3ccbd;
-  text-decoration: none;
-}
-/* line 98, views/sass/0x65.sass */
-#memberbox #m36, #memberbox #m44, #memberbox #m52 {
-  margin-left: 400px;
-}
-/* line 100, views/sass/0x65.sass */
-#memberbox #m65 {
-  margin-left: 150px;
+/* line 85, views/sass/0x65.sass */
+#member_number span {
+  cursor: pointer;
 }
 
-/* line 103, views/sass/0x65.sass */
+/* line 87, views/sass/0x65.sass */
 #membershow {
-  position: absolute;
   width: 360px;
   height: 200px;
   padding: 20px;
-  margin: 120px 0 0 200px;
-  z-index: 0;
 }
-/* line 110, views/sass/0x65.sass */
+/* line 91, views/sass/0x65.sass */
 #membershow p {
   text-align: left;
 }
-/* line 112, views/sass/0x65.sass */
-#membershow .contact {
-  position: absolute;
-  width: 110px;
-  margin-left: 250px;
-  top: 180px;
+/* line 93, views/sass/0x65.sass */
+#membershow img {
+  float: left;
+  width: 80px;
+  height: 80px;
+}
+/* line 97, views/sass/0x65.sass */
+#membershow .content {
+  float: left;
+  width: 280px;
 }
 
-/* line 118, views/sass/0x65.sass */
+/* line 101, views/sass/0x65.sass */
 #plan {
   clear: both;
   background: #d3ccbd;
   padding: 20px 0 50px;
   margin-top: 30px;
 }
-/* line 123, views/sass/0x65.sass */
+/* line 106, views/sass/0x65.sass */
 #plan h3 {
   margin-top: 30px;
 }
 
-/* line 126, views/sass/0x65.sass */
+/* line 109, views/sass/0x65.sass */
 #contact {
   padding: 270px 0;
   font-size: 20px;
   text-align: center;
 }
 
-/* line 131, views/sass/0x65.sass */
+/* line 114, views/sass/0x65.sass */
 #footer {
   background: #d3ccbd;
   padding: 10px 0 60px;

@@ -67,24 +67,24 @@
       %h4 6. Mike 个人承诺
       %p 如果0x65 开出来，所有创始会员，这辈子过来都免费。
     #memberbox.center
-      - 101.times do |i|
-        - s = (i+1).to_s(16)
-        - s = '0' << s if s.length == 1
-        - s = '0x' << s
-        %a(id="m#{i}" href="#member_#{i}" data-scroll="false")= s
-        - if i == 35
-          #membershow
-            - 101.times do |ii|
-              - ss = (ii+1).to_s(16)
-              - ss = '0' << ss if ss.length == 1
-              - ss = '0x' << ss
-              %div(id="member_#{ii}" style="#{ii == 0 ? '' : 'display:none'}")
-                %h3
-                  = ss
-                  会员名字
-                %p 寄语balalalalalalalalalalalalalalalalalalalalala......., 换行继续balalalalalalalalalalalalalalalalalala.......,最后一行balalalalalalalalalalalalalalala.......
-                %p.contact
-                  联系方式
+      %p#member_number
+        - 7.times do
+          %span [ 0 ]
+      #membershow
+        - 101.times do |ii|
+          - ss = (ii+1).to_s(16)
+          - ss = '0' << ss if ss.length == 1
+          - ss = '0x' << ss
+          - id = ii.to_s 2
+          - id = id.length < 7 ? '0' * (7 - id.length) + id : id
+          %div(id="member_#{id}" style="#{ii == 0 ? '' : 'display:none'}")
+            %h3
+              = ss
+              会员名字
+            %img(src="" alt="头像")
+            .content
+              %p 寄语balalalalalalalalalalalalalalalalalalalalala......
+              %p 联系方式
 
     #plan
       .center
@@ -161,8 +161,9 @@
             return true;
           }
           return false;
-        }).delegate('a', 'click', function(){
-          return !$(this).trigger('showcard', this.hash);
+        }).delegate('#member_number span', 'click', function(){
+          this.innerHTML = this.innerHTML === '[ 0 ]' ? '[ 1 ]' : '[ 0 ]';
+          return !$(this).trigger('showcard', '#member_' + $.makeArray($('#member_number span').map(function(){ return this.innerHTML.charAt(2); })).join(''));
         }).data('timer', showcard_start()).mouseenter(function(){
           clearInterval($(this).data('timer'));
         }).mouseleave(function(){
