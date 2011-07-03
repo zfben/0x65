@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require
+require 'yaml'
 
 APP_ROOT = File.dirname(__FILE__)
 
@@ -15,6 +16,7 @@ set :public, "public"
 configure do
   Compass.add_project_configuration(File.join(Sinatra::Application.root, 'config', 'compass.rb'))
   set :haml, { :format => :html5 }
+  set :sass, Compass.sass_engine_options
 end
 
 # routes
@@ -23,7 +25,7 @@ get '/stylesheets/:file' do
   file = params[:file].gsub(/\.css/, '')
   if File.exists?(File.join('views', 'sass', file + '.sass'))
     content_type 'text/css', :charset => 'utf-8'
-    sass(:"sass/#{file}", Compass.sass_engine_options )
+    sass :"sass/#{file}"
   else
     404
   end

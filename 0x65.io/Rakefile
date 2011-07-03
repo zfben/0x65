@@ -3,8 +3,8 @@ task :build do
   require 'rake'
   require File.dirname(__FILE__) << '/app'
   @request = Rack::MockRequest.new(Sinatra::Application)
-  system 'rm static/*;rm -r static/*'
-  system 'cp public/* static'
+  system 'rm -r static/*'
+  system 'cp public/* static/ -r'
   
   Dir.glob('views/pages/*.haml').each do |path|
     url = path.match(/([^\/]+)\.haml/)[1]

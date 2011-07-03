@@ -3,7 +3,7 @@ environment = :development
 
 # This is common configuration
 sass_dir = File.join 'views', 'sass'
-images_dir = File.join 'static', 'images'
+images_dir = File.join 'public', 'images'
 http_path = "/"
-http_images_path = "/images"
-http_stylesheets_path = "/stylesheets"
+output_style = :compressed
+relative_assets = true

@@ -71,20 +71,56 @@
         - 7.times do
           %span [ 0 ]
       #membershow
+        - members = YAML.load(File.read('config/members.yaml'))
         - 101.times do |ii|
-          - ss = (ii+1).to_s(16)
-          - ss = '0' << ss if ss.length == 1
-          - ss = '0x' << ss
-          - id = ii.to_s 2
-          - id = id.length < 7 ? '0' * (7 - id.length) + id : id
+          :ruby
+            ss = (ii+1).to_s(16)
+            ss = '0' << ss if ss.length == 1
+            ss = '0x' << ss
+            id = ii.to_s 2
+            id = id.length < 7 ? '0' * (7 - id.length) + id : id
+            member = members[ii]
+            if member == nil
+              member = {
+                'name' => 'Unknown',
+                'head' => '',
+                'say' => ''
+              }
+            end
+            contact = member.select{ |k, v| k != 'name' && k != 'head' && k != 'say' }
+            contact = contact.map{ |k, v|
+              v = v.to_s
+              case k
+                when 'twitter'
+                  href = 'http://twitter.com/' + v
+                  title = '@' + v
+                when 'sina'
+                  href = 'http://weibo.com/' + v
+                  title = '@' + v
+                when 'gurudigger'
+                  href = 'http://gurudigger.com/users/' + v
+                  title = member['name']
+                when 'blog'
+                  href = 'http://' + v
+                  title = /([^\/\.]+\.[^.\/]+)[^.]*$/.match(v)[1]
+                when 'github'
+                  href = 'http://github.com/' + v
+                  title = v
+              end
+              "<a href='#{href}' title='#{title}' target='_blank' class='#{k}'>#{title}</a>"
+            }.join('')
+            if File.exists?(File.join('public', member['head']))
+              member['head'] = member['head']
+            else
+              member['head'] = 'http://www.gravatar.com/avatar/' << member['head'] << '?s=60'
+            end
           %div(id="member_#{id}" style="#{ii == 0 ? '' : 'display:none'}")
             %h3
               = ss
-              会员名字
-            %img(src="" alt="头像")
-            .content
-              %p 寄语balalalalalalalalalalalalalalalalalalalalala......
-              %p 联系方式
+              = member['name']
+            %img(src="#{member['head']}" alt="#{member['name']}")
+            %p.content= member['say']
+            %p.contact= contact
 
     #plan
       .center
@@ -146,7 +182,7 @@
         function showcard_start(){
           return setInterval(function(){
             $('#memberbox').trigger('showcard');
-          }, 5000);
+          }, 10000);
         }
         $('#memberbox').bind('showcard', function(e, hash){
           var target = $(hash), shown = $('#membershow div:visible');
@@ -158,6 +194,8 @@
               shown.css('display', 'none');
             }
             target.fadeIn('slow');
+            var id = /[0-9]+/.exec(target[0].id)[0];
+            $('#member_number').html($.makeArray($.map(id, function(n){ return '<span>[ ' + n + ' ]</span>'; })).join(' '));
             return true;
           }
           return false;
