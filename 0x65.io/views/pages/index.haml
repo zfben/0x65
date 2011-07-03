@@ -74,7 +74,7 @@
         - members = YAML.load(File.read('config/members.yaml'))
         - 101.times do |ii|
           :ruby
-            ss = (ii+1).to_s(16)
+            ss = (ii).to_s(16)
             ss = '0' << ss if ss.length == 1
             ss = '0x' << ss
             id = ii.to_s 2
@@ -154,7 +154,7 @@
     #footer
       .center
         %p &copy; 2011 0x65.io
-    %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
+    %script(src="javascripts/jquery.js")
     %script
       :plain
         $(window).resize(function(){
