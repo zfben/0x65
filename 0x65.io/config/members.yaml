@@ -17,11 +17,13 @@
   name: Ray58750034
   head: c8e6a7893b84dca0201cfa12624a22f0
   say: 0x65的wifi应该是免费和翻墙的
+  gurudigger: 10514
 3:
   name: Frank_Xu
   head: /images/Frank_Xu.jpg
   say: 你有一个苹果，我有一个苹果，彼此交换，我们每人仍只有一个苹果。你有一种思想，我有一种思想，彼此交换，我们每人就有了两种思想。Ox65,一个交流思想，迸发创意的地方。
   twitter: franky_xhl
+  gurudigger: 30583
 4:
   name: linjunhalida
   head: 946dbc66d19ba815ffec20d05f138f73
@@ -36,12 +38,14 @@
   say: 加油 快办出来.
   twitter: c2h2
   github: c2h2
+  gurudigger: 31198
 6:
   name: Logan
   head: 2c287c5c7e3ad9ed856658abc11c9ec8
   say: 一直很期待这种归属感。
   twitter: xorcerer
   github: xorcerer
+  gurudigger: 15481
 7:
   name: Miclle
   head: 004794ff3508e44c4902fd82ef4027f4
@@ -49,6 +53,7 @@
   blog: miclle.me
   twitter: miclle
   github: miclle
+  gurudigger: 23575
 8:
   name: apoclast
   head: 94e2904aff07266d1be6b2e0e647bc47
@@ -56,6 +61,7 @@
   blog: apoclast.com
   twitter: apoclast
   github: apoclast
+  gurudigger: 3589
 9:
   name: 小田
   head: 495e22cb07fe2dcf0090beefdc8f74bd
@@ -65,6 +71,7 @@
   name: Hui Wang
   head: 984c6760e980d1e9060df87bcee51d8e
   say: 希望有一天, 0x65 成为中国的 YCombinator, 甚至更好
+  gurudigger: 6336
 11:
   name: Stephen
   head: f21e603b2b1d2fdb85a722b711997a09
@@ -72,6 +79,7 @@
   blog: stephen.cnblogs.com
   twitter: onetownx
   github: onetown
+  gurudigger: 33501
 14:
   name: kenshin
   head: 05dcd7af065d8e5961d3823a72d12165
@@ -86,6 +94,7 @@
   say: 希望能够成为Geek聚集地
   twitter: yuanyiz
   github: yzhang
+  gurudigger: 6163
 16:
   name: Vincent 4J
   head: 307ba67a1d4f19ef2188cd76f40f4e48
@@ -93,6 +102,15 @@
   blog: vc4j.com
   twitter: vincent4j
   sina: vincent4j
+  gurudigger: 21514
+17:
+  name: brucebot
+  head: 4d299bc07777b8dbcf3d434193c621cd
+  say: 这是很好的想法，虽然我不太在上海，但是这么一个聚集很多有趣的人的活动，当然要参加并且支持了。期待与有趣的人做有趣的事情！
+  blog: brucebot.com
+  twitter: brucebot
+  gurudigger: 33446
+  github: brucebot
 18:
   name: silenceroom
   head: 5a890a158f6cb5c2a697684fe6f44c7b
@@ -113,6 +131,7 @@
   say: 期待0x65孵化出的多姿多彩的创意……
   blog: leonax.net
   twitter: FinalLaugh
+  gurudigger: 14709
 21:
   name: walle
   head: 79a37bbfe2da37eec340f9eaa219c935
@@ -126,6 +145,7 @@
   head: 2789b55508c5ed4366b1f57ccf419b0c
   say: 喝进去的是咖啡, 挤出来的是10
   twitter: c9
+  gurudigger: 11731
 23:
   name: quake
   head: 748dfca10db6ade9156d9377fc05def7
@@ -139,6 +159,7 @@
   head: 43c3b1ab6efc822530be95feff5089b7
   say: 要有热巧克力
   blog: btli1001.com
+  gurudigger: 27005
 25:
   name: Ben
   head: 34968eb49b6dfd928781f7cd180e2a00
@@ -152,6 +173,7 @@
   head: 6a2281c43ec828dc12592578860acc34
   say: 如果真能建成，真的很COOL啊！很期待，哈哈~
   blog: renren.com/profile.do?id=243802945&v=blog
+  gurudigger: 10519
 27:
   name: Meaglith Ma
   head: 3990405c0bc2257d4402c95460861e03
@@ -159,6 +181,7 @@
   blog: start-up.im
   twitter: genedna
   github: genedna
+  gurudigger: 11875
 28:
   name: GlennZhang
   head: 9756b9f6d87fe6c6aad16fad05bc9502
@@ -177,6 +200,7 @@
   blog: gchen.cn
   twitter: chagel
   github: chagel
+  gurudigger: 17187
 31:
   name: u20024804
   head: 6a8f8285a42a76f5e47159c9f09a7c4f
@@ -191,3 +215,11 @@
   twitter: liangwenke
   gurudigger: 36312
   github: liangwenke
+33:
+  name: pyhunterpig
+  head: 076e6bcdbd014e75ba7a2cc57e93d8b8
+  say: 我们共同努力把基地建设好，这样就能发展状态然后去开矿了。
+  blog: blog.sina.com.cn/pyhunterpig
+  twitter: pyhunterpig
+  gurudigger: 30474
+  github: pyhunterpig
