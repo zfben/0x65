@@ -102,7 +102,7 @@
                   title = member['name']
                 when 'blog'
                   href = 'http://' + v
-                  title = /([^\/\.]+\.[^.\/]+)[^.]*$/.match(v)[1]
+                  title = /([^\/\.]+\.[^\/]+)\/?.*$/.match(v)[1]
                 when 'github'
                   href = 'http://github.com/' + v
                   title = v
