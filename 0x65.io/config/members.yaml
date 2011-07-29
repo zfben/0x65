@@ -20,7 +20,7 @@
   gurudigger: 10514
 3:
   name: Frank_Xu
-  head: /images/Frank_Xu.jpg
+  head: images/Frank_Xu.jpg
   say: 你有一个苹果，我有一个苹果，彼此交换，我们每人仍只有一个苹果。你有一种思想，我有一种思想，彼此交换，我们每人就有了两种思想。Ox65,一个交流思想，迸发创意的地方。
   twitter: franky_xhl
   gurudigger: 30583
@@ -80,6 +80,15 @@
   twitter: onetownx
   github: onetown
   gurudigger: 33501
+12:
+  name: letians
+  head: 001f3620a4da739288b50c371daa0113
+  say: 0x65
+13:
+  name: Ben
+  head: 7269caeb88ee0cf35a70bfd7b71cfbe2
+  say: 2011，我们一起喝咖啡吧
+  gurudigger: 16657
 14:
   name: kenshin
   head: 05dcd7af065d8e5961d3823a72d12165
@@ -238,3 +247,19 @@
   twitter: tangyiding
   gurudigger: 11813
   github: jasonet
+38:
+  name: raptium
+  head: a6a197ee96a2939f320fa7ac33bdb144
+  say: 除了咖啡以外，还要有最靠谱的网络～
+  blog: www.raptium.net
+  twitter: raptium
+  gurudigger: 11556
+  github: raptium
+41:
+  name: ftao
+  head: 6391d0877bca2cd2d6e6a64b14669bfb
+  say: Geeks change the world .
+  blog: blog.ftao.org
+  twitter: ftao
+  gurudigger: 12821
+  github: ftao
