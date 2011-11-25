@@ -1,5 +1,7 @@
-== 0x65
+# 0x65
 
-官网预览[http://benz303.github.com/0x65/]
+http://0x65.io
+
+http://gurudigger.com/ideas/14417
 
 官网源码请移步 0x65.io文件夹

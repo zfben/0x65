@@ -247,6 +247,11 @@
   twitter: tangyiding
   gurudigger: 11813
   github: jasonet
+37:
+  name: Magic
+  head: dcf2de442d6612c17fe226872ec044c9
+  say: 一个技术交流的平台，一个Geek的世界～
+  gurudigger: 36460
 38:
   name: raptium
   head: a6a197ee96a2939f320fa7ac33bdb144
@@ -304,3 +309,19 @@
   twitter: garyshi
   github: garyshi
   gurudigger: 35076
+51:
+  name: libok
+  head: acacc19f159a80717ecf1be143521775
+  say: 真心希望这个Geek基地能成为现实，成为Geek交流新技术和分享新Idea的地方。最好像宣传视频上那样有落地窗， 在浦西老洋房的那种房子， 哈哈
+  blog: blog.slowhunt.com
+  twitter: libok
+  gurudigger: 36697
+  github: libok
+53:
+  name: yinwm
+  head: f9ba1e630f644bfda81e31c1d4f72b3d
+  say: 很期待0x65，并且期待把她带到北京
+  blog: yinwm.com
+  twitter: yinwm
+  gurudigger: 10439
+  github: yinwm
