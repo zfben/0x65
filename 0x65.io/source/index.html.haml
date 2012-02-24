@@ -58,7 +58,7 @@
             %span [ 0 ]
         #membershow
           - members = YAML.load(File.read('source/members.yaml'))
-          - 101.times do |ii|
+          - 128.times do |ii|
             :ruby
               ss = (ii).to_s(16)
               ss = '0' << ss if ss.length == 1
