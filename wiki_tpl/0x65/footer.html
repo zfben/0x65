@@ -1,0 +1,24 @@
+<?php
+/**
+ * Example footer include
+ *
+ * This file shows you how to use the include hooks. However I recommend to
+ * create your own complete new template instead.
+ */
+
+$tgt = ($conf['target']['extern']) ? 'target="'.$conf['target']['extern'].'"' : '';
+?>
+
+<div class="footerinc">
+
+  <a <?php echo $tgt?> href="<?php echo DOKU_BASE; ?>feed.php" title="Recent changes RSS feed"><img src="<?php echo DOKU_TPL; ?>images/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" /></a>
+
+<?php
+if ($conf['allowdebug']) {
+    echo '<!-- page made in '.round(delta_time(DOKU_START_TIME), 3).' seconds -->';
+}
+?>
+
+
+</div>
+<?php include(dirname(__FILE__).'/dwtb.html') ?>
