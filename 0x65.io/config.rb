@@ -1,7 +1,12 @@
+require "rubygems"
 require 'digest/md5'
+require "google_drive"
 
 set :haml, :format => :html5
 set :sass, :style => :compressed
+
+SESSION = GoogleDrive.login("gurudigger.mail@gmail.com", "password")
+WS = SESSION.spreadsheet_by_key("0AhGQsCiSwxabdG5DREZNR1hsczBRaHdCcTEyRUhlX2c").worksheets[0]
 
 configure :build do
   activate :minify_css
@@ -9,7 +14,21 @@ end
 
 helpers do
   def get_members
-    members = YAML.load(File.read('source/members.yaml'))
+
+    members = {}
+    for row_number in 1..(WS.num_rows - 1)
+      row = WS.rows[row_number]
+      members[row[1].to_i] = {
+        name: row[2],
+        say: row[3],
+        head: row[4].strip,
+        blog: row[5],
+        twitter: row[6],
+        gurudigger: row[7],
+        github: row[8],
+      }
+    end
+
     members = members.map do |k, v|
       v = v.inject({}){|memo, (k,v)| memo[k.to_sym] = v; memo}
       [k, v]
@@ -30,14 +49,16 @@ helpers do
       member[:display_id] = ss
       member[:head] = Digest::MD5.hexdigest member[:head] if member[:head].include? '@'
 
-      contact = member.select{ |k, v| k != 'name' && k != 'head' && k != 'say' }
+      contact = member.reject{ |k, v| [:name, :head, :say].include? k}.reject{ |k, v| v.strip.empty? }
       member[:contact] = contact.map{ |k, v|
         v = v.to_s
         case k
         when :twitter
+          v.slice!(0) if v[0] == '@'
           href = 'http://twitter.com/' + v
           title = '@' + v
         when :sina
+          v.slice!(0) if v[0] == '@'
           href = 'http://weibo.com/' + v
           title = '@' + v
         when :gurudigger
@@ -45,7 +66,7 @@ helpers do
           title = member['name']
         when :blog
           href = 'http://' + v
-          title = /([^\/\.]+\.[^\/]+)\/?.*$/.match(v)[1]
+          title = /([^\/\.]+\.[^\/]+)\/?.*$/.match(v)[1] rescue v
         when :github
           href = 'http://github.com/' + v
           title = v
@@ -53,7 +74,7 @@ helpers do
         "<a href='#{href}' title='#{title}' target='_blank' class='#{k}'></a>"
       }.join('')
       
-      if File.exists?(File.join('public', member[:head]))
+      if member[:head].include? 'images'
         member[:head] = member[:head]
       else
         member[:head] = 'http://www.gravatar.com/avatar/' << member[:head] << '?s=60'
