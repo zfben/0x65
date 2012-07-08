@@ -57,56 +57,14 @@
           - 7.times do
             %span [ 0 ]
         #membershow
-          - members = YAML.load(File.read('source/members.yaml'))
-          - 128.times do |ii|
-            :ruby
-              ss = (ii).to_s(16)
-              ss = '0' << ss if ss.length == 1
-              ss = '0x' << ss
-              id = ii.to_s 2
-              id = id.length < 7 ? '0' * (7 - id.length) + id : id
-              member = members[ii]
-              if member == nil
-                member = {
-                  'name' => 'Unknown',
-                  'head' => '',
-                  'say' => ''
-                }
-              end
-              contact = member.select{ |k, v| k != 'name' && k != 'head' && k != 'say' }
-              contact = contact.map{ |k, v|
-                v = v.to_s
-                case k
-                  when 'twitter'
-                    href = 'http://twitter.com/' + v
-                    title = '@' + v
-                  when 'sina'
-                    href = 'http://weibo.com/' + v
-                    title = '@' + v
-                  when 'gurudigger'
-                    href = 'http://gurudigger.com/users/' + v
-                    title = member['name']
-                  when 'blog'
-                    href = 'http://' + v
-                    title = /([^\/\.]+\.[^\/]+)\/?.*$/.match(v)[1]
-                  when 'github'
-                    href = 'http://github.com/' + v
-                    title = v
-                end
-                "<a href='#{href}' title='#{title}' target='_blank' class='#{k}'></a>"
-              }.join('')
-              if File.exists?(File.join('public', member['head']))
-                member['head'] = member['head']
-              else
-                member['head'] = 'http://www.gravatar.com/avatar/' << member['head'] << '?s=60'
-              end
-            %div(id="member_#{id}" style="#{ii == 0 ? '' : 'display:none'}")
+          - get_members.each do |member|
+            %div(id="member_#{member[:id]}" style="#{member[:id] == 0 ? '' : 'display:none'}")
               %h3
-                = ss
-                = member['name']
-              %img(src="#{member['head']}" alt="#{member['name']}")
-              %p.content= member['say']
-              %p.contact= contact
+                = member[:display_id]
+                = member[:name]
+              %img(src="#{member[:head]}" alt="#{member[:name]}")
+              %p.content= member[:say]
+              %p.contact= member[:contact]
       %h4 成为创始会员的条件
       %p 任何一名在太阳系的行星 - 地球 有居住证的居民，都可以申请，通过审核之后，只需要一次性对0x65捐赠 700 RMB 或者 100 USD，即可成为创始会员。创始会员仅限101名，会员资格不可转、继承。
       %h3 创始会员的权利
