@@ -65,7 +65,9 @@ helpers do
           href = 'http://gurudigger.com/users/' + v
           title = member['name']
         when :blog
-          href = 'http://' + v
+          v.downcase!
+          href = v
+          href = 'http://' + href unless href.start_with?('http')
           title = /([^\/\.]+\.[^\/]+)\/?.*$/.match(v)[1] rescue v
         when :github
           href = 'http://github.com/' + v
